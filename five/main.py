@@ -15,17 +15,6 @@ def calculate_seat(input):
     return max(seats), missing_seat
 
 
-def iterate(low, high, input, inc_char):
-    for char in input:
-        mid = (low+high) // 2
-        if char == inc_char:
-            low = mid
-        else:
-            high = mid
-    return low
-
-
-
 def main():
     input = open("./five/input.txt", "r")
 
