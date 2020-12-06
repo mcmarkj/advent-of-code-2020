@@ -8,12 +8,7 @@ def count_unique(groups):
 def count_intersections(groups):
     total_groups = 0
     for group in groups:
-        count_people = group.count('\n')
-
-        if count_people == 0:
-            total_groups += len(set(group))
-        else:
-            total_groups += len(set.intersection(*[set(person) for person in group.split()]))
+        total_groups += len(set.intersection(*[set(person) for person in group.split()]))
 
     return total_groups
 
