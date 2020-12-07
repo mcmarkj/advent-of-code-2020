@@ -22,26 +22,22 @@ def get_count(rules, colour):
 
             # If Gold is in the bag add the overall bag name to the list
             if colour in name:
-                print(colour+" is in "+rule)
                 total_bags += search_num(rules_dict, colour)
 
                 colours.append(rule)
-    print(colours)
     # For each of our bags that directly contain our colour, look at what other bags come with it and see if they contain our colour
     for sub_colour in colours:
         for rule in rules_dict:
             for _, name in rules_dict[rule]:
                 if sub_colour in name:
                     colours.append(rule)
-    print(colours)
 
-    total_bags = search_num(rules_dict, "shiny gold")
+    total_bags = search_num(rules_dict, "shiny gold") - 1
 
     return len(set(colours)), total_bags
 
 
 def search_num(rules, colour):
-    # If the bag contains no other bags, return one (for the bag itself).
     if not rules[colour]:
         return 1
     else:
