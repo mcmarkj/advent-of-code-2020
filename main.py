@@ -5,6 +5,7 @@ import four.main
 import five.main
 import daysix.main
 import seven.main
+import eight.main
 
 if __name__ == '__main__':
     one.main.main()
@@ -14,4 +15,5 @@ if __name__ == '__main__':
     five.main.main()
     daysix.main.main()
     seven.main.main()
+    eight.main.main()
 
