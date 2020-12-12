@@ -8,7 +8,7 @@ import seven.main
 import eight.main
 import nine.main
 import ten.main
-#import eleven.main
+import eleven.main
 
 if __name__ == '__main__':
     one.main.main()
@@ -21,5 +21,5 @@ if __name__ == '__main__':
     eight.main.main()
     nine.main.main()
     ten.main.main()
-    #eleven.main.main()
+    eleven.main.main()
 

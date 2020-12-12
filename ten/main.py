@@ -2,14 +2,8 @@ from collections import Counter
 
 
 def stage_one(numbers):
-    socket = 0
-    inbuilt = max(numbers) + 3
-
-    counter = Counter(numbers)
-
     numbers.append(0)
     numbers.sort()
-    # built in device rate
     numbers.append(numbers[-1] + 3)
 
     differences = {}
@@ -18,9 +12,7 @@ def stage_one(numbers):
             differences[a - b] = 1
         else:
             differences[a - b] += 1
-
-    print("Differences :", differences)
-    print(f"Result is {differences[1] * differences[3]}")
+    return differences[1] * differences[3]
 
 
 def stage_two(numbers):
@@ -29,13 +21,15 @@ def stage_two(numbers):
         c[x + 1] += c[x]
         c[x + 2] += c[x]
         c[x + 3] += c[x]
-    print("Part 2:", c[max(numbers) + 3])
+    return c[max(numbers) + 3]
+
 
 def main():
-
     with open('./ten/input.txt', 'r') as file_:
         numbers = list(map(int, file_.read().split()))
 
-    stage_one(numbers)
+    answer_a = stage_one(numbers)
+    print("10A. Answer is %s" % answer_a)
 
-    stage_two(numbers)
+    answer_b = stage_two(numbers)
+    print("10b. Answer is %s" % answer_b)
